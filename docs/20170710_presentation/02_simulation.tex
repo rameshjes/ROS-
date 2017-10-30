@@ -1,0 +1,59 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = en_US
+% !TeX root = presentation.tex
+
+\subsection{Simulation}
+
+\begin{frame}{Simulation}
+    \begin{itemize}
+        \item Simple Two Dimensional Robot (STDR) simulator	
+        \item Tasks  performed:
+        \begin{itemize}
+            \item Map Building
+            \item Localization
+        \end{itemize}
+    \end{itemize}
+    
+    \centering
+    \includegraphics[width=90mm,height=55mm]{gfx/stdr_simulator}
+    
+\end{frame}
+%---------------------------------------------------------------
+\begin{frame}{Map building I}
+    \begin{itemize}
+        \item Gmapping is used to build 2D occupancy grid map 
+		\item Uses laser sensors to build the map
+        \item Map Server
+        \begin{itemize}
+            \item Provides map saver utility, to save generated map in files(yaml and pgm)
+            \item Offers map data as a ROS Service
+        \end{itemize}
+        
+    \end{itemize}
+\end{frame}
+%-----------------------
+\begin{frame}{Map building II}
+    \begin{center}
+    \includegraphics[width=0.6\textwidth]{gfx/frames_cleaned.pdf}
+    \end{center}
+\end{frame}
+%----------------------------------------------------------------
+\begin{frame}{Localization I}
+    \begin{itemize}
+        \item Adaptive Monto Carlo Localization(AMCL) is used to localize the robot
+        \item Uses particle filter to track the pose of robot
+
+        \item Problems:
+        \begin{itemize}
+            \item AMCL could not find laser data on /scan topic
+            \item AMCL node crushes after some time
+            
+        \end{itemize}
+        \item Solutions:
+        \begin{itemize}
+            \item Remap /scan\_front and /scan\_rear to /scan topic
+            \item Because of transformations provided by STDR simulator
+            
+        \end{itemize}
+    \end{itemize}
+\end{frame}

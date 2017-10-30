@@ -1,0 +1,59 @@
+% !TeX spellcheck = en_US
+% !TeX encoding = UTF-8
+\documentclass[12pt,aspectratio=43,xcolor={usenames,dvipsnames,table}]{beamer}
+\mode<presentation>
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage[babel,style=english,english=american]{csquotes}
+\usepackage{mathabx}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage[gen]{eurosym}
+\usepackage{pgfpages}
+\usepackage{xspace}
+\usepackage{appendixnumberbeamer}
+\usepackage[binary-units]{siunitx}
+\usepackage{tabu}
+\usepackage{graphicx}
+\usepackage{pgfgantt}
+%\usepackage{biblatex}
+
+%\setcounter{tocdepth}{2}
+
+%\usetheme[numbering=counter,progressbar=frametitle]{metropolis}
+%\usetheme[numbering=none]{metropolis}
+%\usetheme[sectionpage=none,subsectionpage=none,numbering=counter,progressbar=none]{metropolis}
+\usetheme[sectionpage=progressbar,subsectionpage=progressbar,numbering=counter,progressbar=frametitle]{metropolis}
+
+\title{Software Development Project}
+\subtitle{Final Presentation}
+\titlegraphic{\includegraphics[width=5cm]{gfx/logo}}
+\author{Wei-Chan Hsu, Torsten Jandt, Ramesh Kumar, Danning Wang}
+\date{July 10, 2017}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
+
+
+\setbeamerfont{footnote}{size=\tiny}
+
+\begin{document}
+
+\begin{frame}[noframenumbering,plain]
+\titlepage
+\end{frame}
+
+\input{00_introduction.tex}
+\input{01_approach.tex}
+
+\section{Realization}
+\input{02_simulation.tex}
+\input{03_on_robot.tex}
+\input{04_results.tex}
+\input{05_conclusions.tex}
+
+\end{document}
